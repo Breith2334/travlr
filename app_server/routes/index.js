@@ -1,11 +1,12 @@
-const express = require("express");
-const router = express.Router();
-const mainController = require("../controllers/main");
+var express = require("express");
+var router = express.Router();
+var ctrlMain = require("../controllers/main");
+var ctrlTravel = require("../controllers/travel");
 
-router.get("/", mainController.index);
+/* GET home page */
+router.get("/", ctrlMain.index);
 
-const travelController = require("../controllers/travel");
-
-router.get("/travel", travelController.list);
+/* GET travel page */
+router.get("/travel", ctrlTravel.travel);
 
 module.exports = router;
